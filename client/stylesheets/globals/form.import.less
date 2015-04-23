@@ -1,0 +1,164 @@
+input {
+  .appearance(none);
+}
+
+// Typography
+.form-title {
+    color: @color-primary;
+}
+
+.form-subtitle {
+    color: @color-g7;
+    font-size:18px;
+    border-bottom:1px solid @color-g3;
+    padding-bottom:15px;
+    margin-bottom:25px;
+}
+
+.form-msg {
+  color: @color-g6;
+}
+
+.form-msg-error {
+  color: @color-red;
+}
+
+.form-msg-success {
+  color: @color-green;
+}
+
+// standard text input
+input[type="text"],
+textarea {
+  .font-s3;
+  .type-regular;
+
+  // Sizing
+  height:50px;
+  line-height: 50px;
+  padding:0 15px;
+  margin-bottom:10px;
+  
+  // Style
+  .placeholder(@color-g5);
+  background: transparent;
+  border: 1px solid @color-g2;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: @color-g6;
+  outline: none;
+
+  &:active,
+  &:focus {
+
+  }
+
+  &[disabled] { opacity: .5; }
+}
+
+.switch {
+  position: relative;
+  height: 40px;
+  width: 200px;
+  margin: 10px 0;
+  background: @color-g3;
+}
+
+.switch-label {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100px;
+  line-height:40px;
+  font-size: 14px;
+  color: @color-g7;
+  text-align: center;
+  cursor: pointer;
+}
+
+.switch-label:active {
+  font-weight: bold;
+}
+
+.switch-input {
+  display: none;
+}
+
+.switch-input:checked + .switch-label {
+  font-weight: bold;
+  color: @color-g0;
+  .transition(0.15s ease-out);
+  .transition-property( color, text-shadow);
+}
+
+.switch-input:checked + .switch-label-on ~ .switch-selection {
+  left: 100px;
+}
+
+.switch-selection {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  display: block;
+  width: 100px;
+  height: 40px;
+  background-color: @color-primary;
+  .transition(left 0.15s ease-out);
+}
+
+.checkbox {
+
+  input[type="checkbox"] {
+    width:20px;
+    height:20px;
+    .appearance(none);
+    border:1px solid @color-g4;
+    background-color: @color-g3;
+    cursor: pointer;
+    margin:5px 0 0 0;
+    position: relative;
+
+    &:after {
+      opacity:0;
+      content: "x";
+      position: absolute;
+      top:-1px;
+      left:4px;
+      color:@color-g0;
+      font-size:14px;
+    }
+
+    &:hover {
+      background-color: @color-g1;
+    }
+
+    &:checked {
+      background-color: @color-primary;
+      border-color: @color-primary;
+
+      &:after {
+        opacity:1;
+      }
+    }
+
+    &:checked + label {
+      color: @color-primary;
+    }
+
+    &[disabled],
+    &[disabled] + label,
+     {
+      cursor: not-allowed; 
+    }
+  }
+
+  label {
+    cursor: pointer;
+    font-size:14px;
+    position: relative;
+    top:-4px;
+    margin-left:3px;
+    color:@color-g7;
+  }
+}

@@ -1,0 +1,140 @@
+
+// Media Query variables
+@mobile:      ~"only screen and (max-width: 599px)";
+@tablet:      ~"only screen and (min-width: 600px) and (max-width: 999px)";
+@desktop:     ~"only screen and (min-width: 1000px) and (max-width: 1200px)";
+@desktop-xl:  ~"only screen and (min-width: 1201px)";
+
+.visible-mobile,
+.visible-mobile-inline,
+.visible-mobile-flex,
+.visible-tablet,
+.visible-tablet-inline,
+.visible-tablet-flex,
+.visible-desktop,
+.visible-desktop-inline,
+.visible-desktop-flex,
+.visible-desktop-xl,
+.visible-desktop-xl-inline,
+.visible-desktop-xl-flex {
+  display:none;
+}
+
+// Mobile only styles
+@media @mobile {
+  .hidden-mobile {
+    display:none !important;
+  }
+  .visible-mobile {
+    display:block !important;
+  }
+  .visible-mobile-inline {
+    display:inline !important;
+  }
+  .visible-mobile-flex {
+    .display(flex);
+  }
+}
+
+// Tablet only styles
+@media @tablet {
+  .hidden-tablet {
+    display:none !important;
+  }
+  .visible-tablet {
+    display:block !important;
+  }
+  .visible-tablet-inline {
+    display:inline !important;
+  }
+  .visible-tablet-flex {
+    .display(flex);
+  }
+}
+
+// Desktop only styles
+@media @desktop {
+  .hidden-desktop {
+    display:none !important;
+  }
+
+  .visible-desktop {
+    display:block !important;
+  }
+
+  .visible-desktop-inline {
+    display:inline !important;
+  }
+
+  .visible-desktop-flex {
+    .display(flex);
+  }
+}
+
+// Desktop-xl only styles
+@media @desktop-xl {
+  .hidden-desktop-xl {
+    display:none !important;
+  }
+  .visible-desktop-xl {
+    display:block !important;
+  }
+  .visible-desktop-xl-inline {
+    display:inline !important;
+  }
+  .visible-desktop-xl-flex {
+    .display(flex);
+  }
+}
+
+
+body {
+  background: @color-g1;
+  width: 100%;
+  //min-width:1000px;
+
+  &.fixed {
+    overflow:hidden;
+
+    @media @mobile {
+      //overflow:auto;
+    }
+
+  }
+  
+}
+
+.wrapper {
+
+  &.overflow-hidden {
+    overflow: scroll;
+    width:100%;
+    height:100%;
+    position: fixed;
+  }
+}
+
+footer {
+	float:left;
+	display:block;
+	width:100%;
+
+	&.spacer {
+		padding-bottom:60px;
+	}
+}
+
+.logo {
+  font-size:32px;
+  color: @color-g8;
+  line-height: 100px;
+  padding:0 0 0 20px;
+  display:block;
+  float:left;
+  .type-title-bold();
+
+  span {
+    color: @color-primary;
+  }
+
+}

@@ -1,0 +1,15 @@
+<template name="home">
+    
+    {{> subheader}}
+    
+    <section class="song-tiles">
+        {{#each songs}}
+            {{> songTile}}
+        {{/each}}
+    </section>
+
+    <footer>
+        <!-- TODO: Create song counter. Set load limit. Load more skip -->
+    </footer>
+
+</template>

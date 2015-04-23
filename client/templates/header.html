@@ -1,0 +1,50 @@
+<template name="header">
+	
+	<div class="header-banner">
+		Welcome to Partying to Music! If you run into any issues or have ideas to make the site better drop us a message at <a href="mailto:support@partying.to">support@partying.to</a>
+		<i class="fa fa-times fa-lg header-banner-close"></i>
+	</div>
+
+	<header>
+		<div class="align-left">
+			<h1 class="logo">partying<span>.</span>to<span class="sub-filter">/{{sub_filter}}</span></h1>
+			<div class="dd-wrapper dd-sub hidden">
+				<ul class="dropdown">
+					<li><a class="sub-filter-link" href="{{pathFor 'music'}}" name="music">/music</a></li>
+					<li><a class="sub-filter-link" href="{{pathFor 'favorites'}}" name="favorites">/favorites</a></li>
+					<div class="dd-divider"></div>
+					<li><a class="sub-filter-link" href="{{pathFor 'deep'}}" name="deep">/deep</a></li>
+					<li><a class="sub-filter-link" href="{{pathFor 'progressive'}}" name="progressive">/progressive</a></li>
+					<li><a class="sub-filter-link" href="{{pathFor 'dub'}}" name="dub">/dub</a></li>
+					<li><a class="sub-filter-link" href="{{pathFor 'tropical'}}" name="tropical">/tropical</a></li>
+					<li><a class="sub-filter-link" href="{{pathFor 'indie'}}" name="indie">/indie</a></li>
+					<li><a class="sub-filter-link" href="{{pathFor 'hiphop'}}" name="hiphop">/hiphop</a></li>
+					<li><a class="sub-filter-link" href="{{pathFor 'pop'}}" name="pop">/pop</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="align-right">
+			{{#if currentUser}}
+
+				<div class="user-settings hidden-mobile">
+					<i class="fa fa-lg fa-gear"></i>
+					<div class="image-wrapper-overlay"></div>
+					<div class="image-wrapper" style="background-image: url({{profile_picture}}) "></div>
+				</div>
+				<button class="menu-mobile visible-mobile"><i class="fa fa-bars"></i></button>
+				<div class="dd-wrapper dd-user hidden">
+					<ul class="dropdown">
+						<li class="visible-mobile"><a class="add-song-link">Add Song</a></li>
+						<li><a class="profile-link">My Profile</a></li>
+						<li><a class="settings-link">Settings</a></li>
+						<li><a class="sign-out-link">Sign Out</a></li>
+					</ul>
+				</div>
+
+				<button class="add-song btn-small hidden-mobile"><i class="fa fa-lg fa-plus"></i></button>
+
+			{{/if}}
+		</div>
+	</header>
+
+</template>

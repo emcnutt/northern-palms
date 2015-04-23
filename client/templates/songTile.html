@@ -1,0 +1,26 @@
+<template name="songTile">
+  <div id="{{_id}}" class="song-tile">
+      <div class="image-outer">
+        <div class="hover">
+          <div class="sub-details-container hidden-mobile">
+            {{#each subs}}
+              <p class="sub-details">/{{this}}</p>
+            {{/each}}
+          </div>
+          <button class="song-play"><i class="fa fa-play"></i></button>
+          <button class="song-pause hide"><i class="fa fa-pause"></i></button>
+        </div>
+        <div class="image-wrapper" style="background-image: url({{song_artwork 't500x500'}}) "></div>
+      </div>
+      <header>
+        <div class="song-info">
+            <h1>{{track.title}}</h1>
+            <h2>{{track.user.username}}</h2>
+        </div>
+        <div class="secondary-actions">
+            <button class="favorite-song {{isSongFavorite}}"><i class="fa fa-lg fa-heart"></i><p>{{favorite_count}}</p></button>
+            <button class="open-comments"><i class="fa fa-lg fa-comment"></i><p>{{comment_count}}</p></button>
+        </div>
+      </header>
+    </div>
+</template>

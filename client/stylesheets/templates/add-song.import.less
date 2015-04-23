@@ -1,0 +1,170 @@
+#addSong {
+	
+	position: fixed;
+	height:100%;
+	width:100%;
+	display:block;
+	z-index: @z-index-8;
+
+	&.hidden {
+		width:0%;
+	}
+	
+	@media @mobile {
+		overflow: auto;
+	}
+
+	#addSong-overlay {
+		position: fixed;
+		display:block;
+		height:100%;
+		width:100%;
+		background-color: fade(@color-g10, 70%);
+		z-index: @z-index-8;
+		.transition(background-color 0.2s ease-out);
+		.translateZ(0);
+
+		&.hidden {
+			height:0%;
+			background-color: fade(@color-g10, 0);
+		}
+	}
+
+	#addSong-container {
+		position:fixed;
+		display:block;
+		height:100%;
+		width:600px;
+		padding:40px;
+		background-color: @color-g0;
+		right:0;
+		z-index: @z-index-9;
+		.transition(all 0.4s ease-in-out);
+
+		@media @mobile {
+			width:100%;
+			position: absolute;
+			padding:60px 20px;
+			height: auto;
+			min-height: 100%;
+		}
+
+		@media @tablet {
+			width:550px;
+		}
+
+		&.hidden {
+			right:-600px;
+
+			#addSong-close {
+				display:none;
+			}
+		}
+
+		#addSong-close {
+			position:absolute;
+			height:40px;
+			width:45px;
+			display:block;
+			background-color: @color-primary;
+			border-radius: 0 0 0 5px;
+			color:@color-secondary;
+			opacity:0.8;
+			left:-45px;
+			top:0;
+			padding:3px 10px;
+			cursor: pointer;
+			z-index: @z-index-8;
+			.transition(color 0.1s ease-in);
+
+			@media @mobile {
+		    	left: -5px;
+		    	top: 5px;
+		    	color: @color-g0;
+		    	background-color: @color-primary;
+		    	border-radius:0 5px 5px 0;
+		  	}
+
+			&:hover {
+				color:lighten(@color-secondary, 10%);
+			}
+		}
+	}
+
+	input[type="text"] {
+		width:75%;
+		margin-right:5%;
+		float:left;
+
+		@media @mobile {
+	    	width:100%;
+	  	}
+	}
+
+	#form-soundcloud-upload {
+		.btn-primary {
+			display:inline-block;
+			width: 20%;
+			margin-bottom:10px;
+
+			@media @mobile {
+		    	width:100%;
+		  	}
+		}
+	}
+
+	.form-upload-loading {
+		width:100%;
+		height:50px;
+		background-color: @color-g1;
+		text-align: center;
+		line-height: 50px;
+		color: @color-g5;
+	}
+
+	#form-song-upload {
+		width:100%;
+		background-color: @color-g2;
+
+		.song-image {
+			float: left;
+			margin:20px 0 20px 20px;
+			height:100px;
+			width:100px;
+		}
+		.song-text {
+			padding:20px 20px;
+			float: left;
+			text-wrap: normal;
+			width: ~'calc(100% - 150px)';	
+
+			@media @mobile {
+				width:100%;
+				padding-top:0;
+			}
+
+			.song-title {
+				font-weight:bold;
+				font-size:16px;
+				line-height:18px;
+				margin-bottom:5px;
+			}
+
+			.song-artist {
+				font-size:16px;
+				line-height:18px;
+				margin-bottom:5px;
+			}
+
+			.text-label {
+				margin:15px 0 0 0;
+			}
+		}
+
+
+		.form-msg {
+			background-color: @color-g0;
+			padding-top:10px;
+		}
+	}
+}

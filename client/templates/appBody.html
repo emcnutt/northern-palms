@@ -1,0 +1,15 @@
+<template name="appBody">
+ 	
+ 	{{> drawer}}
+    {{> addSong}}
+    <div class="wrapper">
+        
+        {{> yield "header"}}
+
+        {{> yield}}
+    
+    </div>
+
+    {{> player}}
+    
+</template>

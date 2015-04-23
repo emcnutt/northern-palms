@@ -1,0 +1,41 @@
+.subheader {
+	border-bottom:1px solid @color-g3;
+	margin-bottom:0;
+	background-color: @color-g1;
+	height:40px;
+	padding: 0 0 0 20px;
+
+	@media @mobile {
+		padding: 0 0 0 10px;
+	}
+	
+	.filter {
+		text-align: left;
+
+		a {
+			margin-right:20px;
+			height:40px;
+			padding:10px 5px;
+			display: inline-block;
+			color:@color-g5;
+			margin-bottom:0;
+			
+			@media @mobile {
+				font-size:14px;
+				margin-right:10px;
+			}
+
+			&.selected {
+				color:@color-g6;
+				border-bottom:3px solid @color-primary;
+			}
+		}
+	}
+	.filter-sort {
+		float:left;
+	}
+
+	.filter-mix {
+		float:right;
+	}
+}
