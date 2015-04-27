@@ -4,6 +4,9 @@
 
         soundcloudClientId: "71eb94f201e6b8df2e56c9eaa6f90fc1",
         audio: undefined,
+        playlist: [
+            "https://api.soundcloud.com/tracks/196675838/stream"
+        ],
 
         getSong: function() {
             return Session.get("playerSong");
@@ -41,8 +44,17 @@
         // @songId (string): ID of song to load into player
         // @callback (function): returns true if song successfully loaded into player
         loadSong: function(songId, callback) {
-            var song = Songs.findOne(songId);
-            Session.set("playerSong", song);
+            // var song = Songs.findOne(songId);
+            // Session.set("playerSong", song);
+            // Player.loadSound(songId, function(resp) {
+            //     if (resp == true) {
+            //         callback(true);
+            //     } else {
+            //         callback(false);
+            //         //TODO - message in player
+            //         console.log('fuck');
+            //     }
+            // });
             Player.loadSound(songId, function(resp) {
                 if (resp == true) {
                     callback(true);
@@ -56,9 +68,6 @@
 
         // @songId (string) *optional*: ID of song to play
         playSong: function(songId) {
-            if(Player.isPlayerHidden() == true) {
-                Player.showPlayer();
-            }
             if (songId) {
                 if(Player.getSongId() == songId) { // Checks to see if that song is already loaded in player
                     Player.playSound();
@@ -148,9 +157,8 @@
 
         // @songId (string): ID of song to stream
         // @callback (function): returns true if stream successfully opened into player
-        loadSound: function(songId, callback) {
-            var song = Songs.findOne(songId);
-            var streamUrl = song.track.stream_url + "?client_id=" + Player.soundcloudClientId;
+        loadSound: function(callback) {
+            var streamUrl = Player.playlist[0] + "?client_id=" + Player.soundcloudClientId;
             Player.audio = Player.getPlayerAudioElement();
             Player.audio.setAttribute('src', streamUrl);
             Player.audio.preload = "metadata";
@@ -159,45 +167,6 @@
                 return   
             };
             callback(true);
-            
-            
-
-            // if (song != undefined) {
-            //     var streamUrl = song.track.stream_url;
-            //     console.log(streamUrl);
-            //     streamUrl = song.track.stream_url.replace('https://api.soundcloud.com', '');
-            //     SC.stream(streamUrl, options, function(sound) {
-                    
-            //         console.log(sound);
-            //         callback(true);
-
-                    // var songArray = Playlist.list;
-                    // for (var i = 0; i < songArray.length; i++){
-                    //     if (songArray[i]._id == songId) {
-
-                    //         if (i+1 < songArray.length) {
-                    //             Session.set("playerNextSong", songArray[i+1]);
-                    //         } else {
-                    //             Session.set("playerNextSong", false);
-                    //         }
-
-                    //         if (i-1 >= 0) {
-                    //             Session.set("playerPreviousSong", songArray[i-1]);
-                    //         } else {
-                    //             Session.set("playerPreviousSong", false);
-                    //         }
-                    //     }
-                    // }
-                // });
-            // }
-        },
-
-        isPlayerHidden: function() {
-            return Session.get("isPlayerHidden");
-        },
-
-        showPlayer: function() {
-            Session.set("isPlayerHidden", false);
         },
     }
 

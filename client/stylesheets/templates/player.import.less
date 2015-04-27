@@ -5,7 +5,7 @@
 	bottom:0;
 	display:block;
 	position: fixed;
-	background-color: fade(@color-g10, 90%);
+	background-color: @color-offwhite;
 	z-index: @z-index-7;
     .translateZ(0);
 	.transition(all, 0.7s);
@@ -40,7 +40,7 @@
 		left:60px;
 		width:120px;
 		height:60px;
-		border-right:1px solid @color-g8;
+		border-right:1px solid @color-primary;
 		.display(flex);
 		.justify-content(center);
 		.align-items(center);
@@ -53,7 +53,7 @@
         }
 
 		button {
-			color:@color-g0;
+			color:@color-primary;
 			background-color: transparent;
 			width:30px;
 			height:30px;
@@ -61,11 +61,11 @@
 			.transition(all, 0.3s);
 
 			&:hover {
-				color:@color-g4;
+				color:@color-secondary;
 			}
 
 			&.disabled {
-				color: fade(@color-g0, 20%);
+				color: fade(@color-g4, 20%);
 				cursor-events:none;
 			}
 
@@ -86,107 +86,6 @@
 		}
 	}
 
-	.comment-wrapper {
-		position:absolute;
-		width:60px;
-		right:0;
-		height:60px;
-		border-left:1px solid @color-g8;
-		.display(flex);
-		.justify-content(center);
-		.align-items(center);
-
-        @media @mobile {
-            height:40px;
-            width:40px;
-        }
-
-		a {
-			color:@color-g5;
-
-			&:visited {
-				color:@color-g5;
-			}
-
-			&.open {
-				color:@color-g0;
-
-				.fa {
-					color:@color-g0;
-				}
-			}
-
-			.fa {
-				.flex(auto);
-				.align-self(center);
-				text-align: center;
-				color:@color-g5;
-				.transition(all 0.5s);
-				z-index: @z-index-2;
-
-				&:hover {
-					color:@color-g0;
-				}
-				&:active {
-					color:@color-g0;
-				}
-				&:focus {
-					color:@color-g0;
-				}
-			}
-		}
-		
-	}
-
-	.favorite-wrapper {
-        position:absolute;
-        width:60px;
-        right:60px;
-        height:60px;
-        border-left:1px solid @color-g8;
-        .display(flex);
-        .justify-content(center);
-        .align-items(center);
-
-        a {
-            color:@color-g5;
-
-            &:visited {
-                color:@color-g5;
-            }
-
-            &.favorited {
-                .fa {
-                    color:@color-primary;
-
-                    &:hover {
-                        color:@color-primary;
-                        .transform(scale(1.2,1.2));
-                    }
-                }
-            }
-
-            .fa {
-                .flex(auto);
-                .align-self(center);
-                text-align: center;
-                color:@color-g5;
-                .transition(all 0.2s ease-out);
-                z-index: @z-index-2;
-
-                &:hover {
-                    color:@color-g0;
-                }
-                &:active {
-                    color:@color-g0;
-                }
-                &:focus {
-                    color:@color-g0;
-                }
-            }
-        }
-    }
-
 	.detail-wrapper {
 		position:absolute;
 		height:60px;
@@ -204,7 +103,7 @@
         }
         
 		.flex-container {
-			width:~'calc(100% - 300px)';
+			width:~'calc(100% - 200px)';
 
             @media @mobile {
                 width:100%;
@@ -217,13 +116,13 @@
 					font-size:14px;
 					line-height: 14px;
 					font-weight:bold;
-					color:@color-g1;
+					color:@color-primary;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
 
 					span {
-						color: @color-g5;
+						color: @color-primary;
 					}
 				}
 			}
@@ -235,22 +134,23 @@
 
 			.song-tracker {
                 width: ~'calc(100% - 120px)';
-				height:10px;
-				margin-top:10px;
-                margin-left:60px;
+				height: 10px;
+				margin-top: 10px;
+                margin-left: 60px;
 				border-radius: 5px;
-				background-color: @color-g6;
-				overflow:hidden;
+				background-color: @color-primary;
+				overflow: hidden;
 
                 @media @mobile {
-                    width:100%;
+                    width: 100%;
                     border-radius: 0;
-                    margin-top:0;
+                    margin-top: 0;
+                    margin-left: 0;
                 }
 
 				.progress {
                     .transition(all 0.3s);
-					height:10px;
+					height: 10px;
 					background-color: @color-primary;
 				}
 			}

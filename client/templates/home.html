@@ -1,15 +1,32 @@
 <template name="home">
-    
-    {{> subheader}}
-    
-    <section class="song-tiles">
-        {{#each songs}}
-            {{> songTile}}
-        {{/each}}
-    </section>
+     <div class="home-wrapper">
+        <div class="home-container">
+            
+            <div class="sky-wrapper">
+                <h1>Northern Palms</h1>
+                <div class="link-container">
+                    <a class="link">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a class="link">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a class="link">
+                        <i class="fa fa-soundcloud"></i>
+                    </a>
+                    <a class="link">
+                        <i class="fa fa-envelope"></i>
+                    </a>
+                </div>
 
-    <footer>
-        <!-- TODO: Create song counter. Set load limit. Load more skip -->
-    </footer>
+                <div class="city-wrapper">    
+                </div>
 
+            </div>
+
+            <div class="ocean-wrapper">
+            </div>
+
+        </div>
+     </div>
 </template>

@@ -4,7 +4,6 @@ Template.player.rendered = function () {
     Session.set("playerSong", undefined);
     Session.set("playerNextSong", false);
     Session.set("playerPreviousSong", false);
-    Session.set("isPlayerHidden", true);
 };
 
 

@@ -1,0 +1,98 @@
+.home-wrapper {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(51,204,255,1.00);
+    background-image: linear-gradient(180deg, rgba(245,158,189,1.00) 0%, rgba(254,203,133,1.00) 77%);
+    position: absolute;
+    padding-bottom: 60px;
+
+    @media @mobile {
+        padding-bottom: 50px;
+    }
+}
+
+.home-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.ocean-wrapper {
+    position: absolute;
+    bottom: 0;
+    height: 30%;
+    width: 100%;
+    background-color: rgba(51,204,255,1.00);
+    background-image: linear-gradient(0deg, rgba(100,189,201,1.00) 0%, rgba(70,180,194,1.00) 100%);
+}
+
+.sky-wrapper {
+    position: relative;
+    top: 0;
+    height: 70%;
+    
+
+    h1 {
+        font-family: 'Pier', sans-serif;
+        font-size: 48px;
+        color: @color-offwhite;
+        text-transform: uppercase;
+        text-align: center;
+        width: 100%;
+        top: 20%;
+        position: relative;
+        z-index: @z-index-3;
+    }
+
+    .link-container {
+        position: relative;
+        z-index: @z-index-3;
+        .display(flex);
+        width: 100%;
+        .justify-content(center);
+        top: 25%;
+
+        .link {
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: @color-offwhite;
+            margin: 5px;
+            .transition(0.3s);
+            .display(flex);
+            .justify-content(center);
+            .align-items(center);
+            
+            i {
+                color: @color-pink;
+                width: 100%;
+                text-align: center;
+            }
+            
+            &:hover {
+                background-color: @color-blue;
+
+                i { 
+                    color: @color-offwhite;
+                }
+            }
+        }
+    }
+}
+
+
+.city-wrapper {
+    background-image: url('img/city-2.svg');
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center bottom;
+    z-index: @z-index-1;
+}
+

@@ -1,6 +1,6 @@
 <template name="player">
 
-    <section id="player" class="hidden">
+    <section id="player">
     
         <div class="image-wrapper" style="background-image: url({{player_song_artwork 't67x67'}}) "></div>
 
@@ -31,24 +31,7 @@
             </div>
         </div>
 
-        <div class="favorite-wrapper hidden-mobile">
-            <a class="player-favorite {{is_song_favorite}}"><i class="fa fa-lg fa-heart"></i></a>
-        </div>
-
-        <div class="comment-wrapper">
-            <a class="player-comments">
-                <i class="fa fa-lg fa-ellipsis-h"></i>
-            </a>
-        </div>
-
 	</section>
     
-    <!-- Do Not Remove / Used for Chrome Plugin -->
-    <section id="song-meta" class="hide">
-        <audio id="player-audio-element"></audio>
-        <span id="meta-artist">{{player_song_details "username" true}}</span>
-        <span id="meta-song">{{player_song_details "title"}}</span>
-        <span id="meta-artwork">{{player_song_artwork 'large'}}</span>
-    </section>
 
 </template>
