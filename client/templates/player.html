@@ -1,31 +1,25 @@
 <template name="player">
 
     <section id="player">
-    
-        <div class="image-wrapper" style="background-image: url({{player_song_artwork 't67x67'}}) "></div>
 
         <div class="button-wrapper">
-    	    <button id="song-previous" class="disabled"><i class="fa fa-backward"></i></button>
+    	    <button id="song-previous" class=""><i class="fa fa-backward"></i></button>
     	    <button id="song-play"><i class="fa fa-2x fa-play"></i></button>
     	    <button id="song-pause" class="hide"><i class="fa fa-2x fa-pause"></i></button>
-    	    <button id="song-next" class="disabled"><i class="fa fa-forward"></i></button>
+    	    <button id="song-next" class=""><i class="fa fa-forward"></i></button>
     	</div>
 
     	<div class="detail-wrapper">
         	<div class="flex-container">
-                <div class="song-details hidden-mobile">
-                    <h1>{{player_song_details "title"}}<span>&nbsp;&mdash;&nbsp;{{player_song_user_details "username"}}</span></h1>
-                </div>
-                
                 <div class="song-tracker-container">
                     <div class="duration duration-played hidden-mobile">
-                        {{time_lapsed}}
+                        
                     </div>
                     <div class="song-tracker">
                         <div class="progress" style="width: {{time_position}}"></div>
                     </div>
                     <div class="duration duration-remaining hidden-mobile">
-                        {{time_remaining}}
+                  
                     </div>
                 </div>
             </div>
@@ -33,5 +27,6 @@
 
 	</section>
     
+    <audio id="player-audio-element"></audio>
 
 </template>

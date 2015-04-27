@@ -9,59 +9,6 @@ Template.player.rendered = function () {
 
 Template.player.helpers({
 
-    // @key (string): returns value of 'key' from player song
-    player_song_details: function (key) {
-        var playerSongId = Player.getSongId();
-        if (playerSongId) {
-            return Song.getDetails(playerSongId, key);
-        }
-    },  
-
-    // @key (string): returns value of 'key' from player song
-    player_song_user_details: function(key){
-        var playerSongId = Player.getSongId();
-        if (playerSongId) {
-            return Song.getTrackUserDetails(playerSongId, key);
-        }
-    },
-
-    // @size (string): returns 'size' of artwork. See Soundcloud API for sizes
-    player_song_artwork: function (size) {
-        var playerSongId = Player.getSongId();
-        if (playerSongId) {
-            return Song.getArtwork(playerSongId, size);
-        }
-    },
-
-    is_song_favorite: function () {
-        var playerSongId = Player.getSongId();
-        if (playerSongId) {
-            var isFavorite = Song.isSongFavorited(playerSongId);
-            if (isFavorite == true) {
-                return "favorited";
-            }
-        }
-    },
-
-    time_position: function () {
-        var playerSoundLapsed= Player.getSoundLapsed();
-        if (playerSoundLapsed) {
-            var position = playerSoundLapsed/Player.getSongDuration();
-            return position * 100 + '%';
-        } else {
-            return '0%';
-        }
-    },
-
-    time_remaining: function() {
-        var soundRemaining = Player.getSoundRemaining();
-        return '–' + soundRemaining.toHHMMSS();
-    },
-
-    time_lapsed: function() {
-        var soundLapsed = Player.getSoundLapsed();
-        return soundLapsed.toHHMMSS();
-    },
 
 });
 
@@ -126,31 +73,5 @@ Tracker.autorun(function () {
     } else {
         $('#song-pause').addClass('hide');
         $('#song-play').removeClass('hide');
-    }
-});
-
-Tracker.autorun(function () {
-    if (Player.isNextSong() == true) {
-        $('#song-next').removeClass('disabled');
-    } else {
-        $('#song-next').addClass('disabled');
-    }
-});
-
-Tracker.autorun(function () {
-    if (Player.isPreviousSong() == true) {
-        $('#song-previous').removeClass('disabled');
-    } else {
-        $('#song-previous').addClass('disabled');
-    }
-});
-
-Tracker.autorun(function () {
-    if (Player.isPlayerHidden() == true) {
-        $('#player').addClass('hidden');
-        $('footer').removeClass('spacer');
-    } else {
-        $('#player').removeClass('hidden');
-        $('footer').addClass('spacer');
     }
 });

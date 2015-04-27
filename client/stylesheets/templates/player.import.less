@@ -1,56 +1,20 @@
 #player {
 	width:100%;
-    //min-width:600px;
-	height:60px;
+	height:40px;
 	bottom:0;
 	display:block;
 	position: fixed;
 	background-color: @color-offwhite;
 	z-index: @z-index-7;
-    .translateZ(0);
-	.transition(all, 0.7s);
-    
-    @media @mobile {
-        height:40px;
-    }
-
-	&.hidden {
-		bottom:-60px;
-
-        @media @mobile {
-            bottom:-50px;
-        }
-	}
-
-	.image-wrapper {
-		height:60px;
-		width:60px;
-		background-size: 100%;
-		position:absolute;
-
-        @media @mobile {
-            height:40px;
-            width:40px;
-        }
-	}
+    .display(flex);
+    .justify-content(center);
 
 	.button-wrapper{
-		position:absolute;
-		display:block;
-		left:60px;
-		width:120px;
-		height:60px;
-		border-right:1px solid @color-primary;
+		height:40px;
+        .flex();
 		.display(flex);
 		.justify-content(center);
 		.align-items(center);
-
-        @media @mobile {
-            width: ~'calc(100% - 80px)';
-            border-right:none;
-            left:40px;
-            height:40px;
-        }
 
 		button {
 			color:@color-primary;
@@ -71,112 +35,12 @@
 
 			&#song-pause,
             &#song-play {
-				margin:0 5px;
-
-                @media @mobile {
-                    margin:0 25px;
-                }
+				margin:0 25px;
 
                 i {
-                    @media @mobile {
-                        font-size:24px;
-                    }
+                    font-size:24px;
                 }
 			}
 		}
 	}
-
-	.detail-wrapper {
-		position:absolute;
-		height:60px;
-		display:block;
-		padding:10px;
-		left:180px;
-		.display(flex);
-		width:100%;
-
-        @media @mobile {
-            left:0;
-            padding:0;
-            top:-10px;
-            height:10px;
-        }
-        
-		.flex-container {
-			width:~'calc(100% - 200px)';
-
-            @media @mobile {
-                width:100%;
-            }
-            
-			.song-details {
-				margin-top:3px;
-				
-				h1 {
-					font-size:14px;
-					line-height: 14px;
-					font-weight:bold;
-					color:@color-primary;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-
-					span {
-						color: @color-primary;
-					}
-				}
-			}
-            
-            .song-tracker-container {
-                width:100%;
-                position: relative;
-            }
-
-			.song-tracker {
-                width: ~'calc(100% - 120px)';
-				height: 10px;
-				margin-top: 10px;
-                margin-left: 60px;
-				border-radius: 5px;
-				background-color: @color-primary;
-				overflow: hidden;
-
-                @media @mobile {
-                    width: 100%;
-                    border-radius: 0;
-                    margin-top: 0;
-                    margin-left: 0;
-                }
-
-				.progress {
-                    .transition(all 0.3s);
-					height: 10px;
-					background-color: @color-primary;
-				}
-			}
-		}
-
-		.duration {
-			width:60px;
-			color:@color-g4;
-			font-size:12px;
-			height:60px;
-			position: absolute;
-			display:block;
-            padding:0 5px;
-            text-align: center;
-		}
-
-        .duration-remaining {
-            right:0;
-            top:-3px;
-        }
-
-        .duration-played {
-            left:0;
-            top:-3px;
-        }
-		
-	}
-	
 }

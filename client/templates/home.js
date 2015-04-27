@@ -1,6 +1,7 @@
 Template.home.rendered = function () {
-
     
+    Player.loadSong();
+    Player.playSong();
 
 };
 
