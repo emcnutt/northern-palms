@@ -6,11 +6,7 @@
         audio: undefined,
         currentSong: 0,
         playlist: [
-            "https://api.soundcloud.com/tracks/189183176/stream",
-            "https://api.soundcloud.com/tracks/201890755/stream",
-            "https://api.soundcloud.com/tracks/202640686/stream",
-            "https://api.soundcloud.com/tracks/196174730/stream",
-            "https://api.soundcloud.com/tracks/182274373/stream"
+            "https://api.soundcloud.com/tracks/78800969/stream"
         ],
 
         playPreviousSong: function() {
